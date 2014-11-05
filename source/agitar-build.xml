@@ -1,0 +1,208 @@
+<?xml version="1.0" ?>
+<project name="openapi_agitar" default="agitar-all">
+	
+	
+	<!-- Root directory of your eclipse installation -->
+	<property name="eclipse.install.dir" value="D:/esdk_huadf_llt/eclipse"/>
+	<property name="agitarOne.install.dir" value="D:/esdk_huadf_llt/eclipse"/>
+	
+	
+	<!-- Override eclipse.java (using -Declipse.java) with the java your eclipse instance used -->
+	<property name="eclipse.java" value="java"/>
+	
+	
+	<!-- Override jvm with the java you wish to use for running tests -->
+	<property name="jvm" value="java"/>
+	<property name="dashboardURL.OpenApi_SDK_0113" value=""/>
+	<property name="domain.access.key" value=""/>
+	<property name="domain.email" value=""/>
+	
+	
+	<!-- Use of ${project.dir.OpenApi_SDK_0113} allows for the resolution of relative paths even when this file is imported in another build file -->
+	<dirname file="${ant.file.OpenApi_SDK_0113}" property="project.dir.OpenApi_SDK_0113"/>
+	<condition property="project.dir.OpenApi_SDK_0113" value="${basedir}">
+		<not>
+			<isset property="project.dir.OpenApi_SDK_0113"/>
+		</not>
+	</condition>
+	<property name="max.memory" value="1024m"/>
+	<path id="agitar.possible.startup.jars">
+		<pathelement location="${eclipse.install.dir}/startup.jar"/>
+		<fileset dir="${eclipse.install.dir}/plugins/" includes="org.eclipse.equinox.launcher_*.jar"/>
+	</path>
+	
+	
+	<!-- Agitar Build Number (If this fails, add -ws win32|gtk|motif in front of -data as is appropriate for your platform.) -->
+	<java fork="true" jvm="${eclipse.java}" classname="org.eclipse.core.launcher.Main" outputproperty="agitar.build.num" errorproperty="agitar.java.error">
+		<arg line=" -data &quot;${user.home}/.agitar/.temp_workspace&quot; -application com.agitar.eclipse.cmdline.Version"/>
+		<classpath refid="agitar.possible.startup.jars"/>
+	</java>
+	
+	
+	<!-- Location of the import files for the agitar ant tasks taskdefs -->
+	<property name="agitarant.import.dir" value="${agitarOne.install.dir}/plugins/com.agitar.agitator_${agitar.build.num}/config"/>
+	
+	
+	<!-- Import the agitar ant taskdefs -->
+	<import file="${agitarant.import.dir}/agitar_ant.xml"/>
+	
+	
+	<!-- Project Definitions -->
+	
+	
+	
+	<!-- Agitar project definition for OpenApi_SDK_0113 project -->
+	<agitar-project id="OpenApi_SDK_0113.project" projectDir="${project.dir.OpenApi_SDK_0113}" agitarDir="${project.dir.OpenApi_SDK_0113}/build/agitar" resultDir="${project.dir.OpenApi_SDK_0113}/build/agitar/.results" configDir="${project.dir.OpenApi_SDK_0113}/build/agitar/config" generatedTestDir="${project.dir.OpenApi_SDK_0113}/build/agitar/test" reportOutputDir="${project.dir.OpenApi_SDK_0113}/build/agitar/reports/latest" dataDir="${project.dir.OpenApi_SDK_0113}/build/agitar/reports/latest/data" authEmail="${domain.email}" accessKey="${domain.access.key}" agitationVmArgs="-Xms128m -Xmx512m" testGenerationVmArgs="-Xmx1024m" projectName="OpenApi_SDK" dashboardRootURL="${dashboardURL.OpenApi_SDK_0113}" jvmVendor="Sun" jvmVersion="1.6.0_27" aggressiveMocks="true" importedCoverageDir="${project.dir.OpenApi_SDK_0113}/build/agitar/imports">
+		<sourcePath>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/src/main/java"/>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/testcode/agitar/test"/>
+		</sourcePath>
+		<targetClasspath>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/build/classes"/>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/build/agitar"/>
+		</targetClasspath>
+		<libClasspath>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/commons-logging-1.1.3.jar"/>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/gson-2.2.2.jar"/>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/httpclient-4.2.3.jar"/>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/httpcore-4.2.3.jar"/>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/json.jar"/>
+			<pathElement location="${eclipse.install.dir}/plugins/com.agitar.eclipse.api_${agitar.build.num}/com.agitar.mockingbird.jar"/>
+			<pathElement location="${eclipse.install.dir}/plugins/com.agitar.eclipse.api_${agitar.build.num}/lib/ext/org.agitar.mock5.jar"/>
+		</libClasspath>
+		<testResultsPath>
+			<pathElement location="${project.dir.OpenApi_SDK_0113}/build/agitar/.junitresults"/>
+		</testResultsPath>
+	</agitar-project>
+	
+	
+	<!-- Configuration for OpenApi_SDK_0113 -->
+	<agitar-config id="OpenApi_SDK_0113.config" local="false" generateXMLDashboard="true" showCoverageDetails="true"/>
+	
+	
+	<!-- Default target -->
+	<target name="agitar-all" depends="agitate, run-tests, checkrules, quicklist, dashboard, email"/>
+	
+	
+	<!-- Cleans old agitation results and coverage -->
+	<target name="clean-all" >
+		<delete dir="${project.dir.OpenApi_SDK_0113}/agitar" quiet="true"/>
+	</target>
+	
+	
+	<!-- Cleans old agitation and junit results, logs and dashboards -->
+	<target name="clean-agitar">
+		<delete dir="${project.dir.OpenApi_SDK_0113}/build/agitar/.results" quiet="true"/>
+		<delete dir="${project.dir.OpenApi_SDK_0113}/build/agitar/.junitresults" quiet="true"/>
+		<delete dir="${project.dir.OpenApi_SDK_0113}/build/agitar/.logs" quiet="true"/>
+		<delete quiet="true" includeemptydirs="true">
+			<fileset dir="${project.dir.OpenApi_SDK_0113}/build/agitar/reports/latest" excludes="**/*.ddf"/>
+		</delete>
+	</target>
+	
+	
+	<!-- Agitates the project remotely on the server -->
+	<target name="agitate" depends="clean-all">
+		<agitate projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config" maxmemory="${max.memory}">
+			<agitar-config hasconfig="true"/>
+		</agitate>
+	</target>
+	
+	
+	<!-- Generates tests for the project -->
+	
+	
+	
+	<!-- Add this target as a dependency to the agitar-all target to generate tests -->
+	
+	
+	
+	<!-- Compile these tests with a new compilation target to include them in test runs and dashboards -->
+	<target name="generatetests">
+		<generatetests projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config"/>
+	</target>
+	
+	
+	<!-- Runs tests for this project on the AgitarOne server -->
+	<target name="remoteruntests">
+		<remoteruntests projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config"/>
+	</target>
+	
+	
+	<!-- Run the code rules checker -->
+	<target name="checkrules">
+		<checkrules projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config" maxmemory="${max.memory}"/>
+	</target>
+	
+	
+	<!-- Select classes for agitation -->
+	<target name="quicklist">
+		<quicklist projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config"/>
+	</target>
+	
+	
+	<!-- Import external coverage -->
+	<target name="importcoverage">
+		<importcoverage projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config" clearCoverage="false">
+			<fileset dir="${user.home}/agitar_coverage">
+				<include name="**/*.zcov"/>
+			</fileset>
+		</importcoverage>
+	</target>
+	
+	
+	<!-- Generate a dashboard -->
+	<target name="dashboard">
+		<dashboard projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config" maxmemory="${max.memory}"/>
+		<echo message="Dashboard generated at D:\esdk_v1r1c10\vasa_all\OpenAPI\build\agitar\reports\latest\index.html" level="info"/>
+	</target>
+	
+	
+	<!-- Email task -->
+	<target name="email">
+		<email projectid="OpenApi_SDK_0113.project" configid="OpenApi_SDK_0113.config"/>
+	</target>
+	
+	
+	<!-- Run the tests for this project -->
+	<target name="run-tests">
+		<property name="test.results.dir" value="${project.dir.OpenApi_SDK_0113}/build/agitar/.junitresults"/>
+		<mkdir dir="${test.results.dir}"/>
+		<super-runner dir="${project.dir.OpenApi_SDK_0113}" maxmemory="${max.memory}" batchSize="5" timeout="300000" printsummary="yes" haltonfailure="no" jvm="${jvm}" resultsDir="${project.dir.OpenApi_SDK_0113}/build/agitar/.results">
+			<jvmarg value="-Xmx1024m"/>
+			<jvmarg value="-ea"/>
+			<jvmarg value="-Djava.awt.headless=true"/>
+			<formatter type="xml"/>
+			<classpath>
+				<pathElement location="${project.dir.OpenApi_SDK_0113}/build/classes"/>
+				<pathElement location="${project.dir.OpenApi_SDK_0113}/build/agitar"/>
+				<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/commons-logging-1.1.3.jar"/>
+				<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/gson-2.2.2.jar"/>
+				<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/httpclient-4.2.3.jar"/>
+				<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/httpcore-4.2.3.jar"/>
+				<pathElement location="${project.dir.OpenApi_SDK_0113}/../third_party_groupware/json.jar"/>
+				<pathElement location="${eclipse.install.dir}/plugins/com.agitar.eclipse.api_${agitar.build.num}/com.agitar.mockingbird.jar"/>
+				<pathElement location="${eclipse.install.dir}/plugins/com.agitar.eclipse.api_${agitar.build.num}/lib/ext/org.agitar.mock5.jar"/>
+			</classpath>
+			<batchtest todir="${test.results.dir}">
+				<fileset dir="${project.dir.OpenApi_SDK_0113}/build/agitar">
+					<include name="**/*Test.class"/>
+					<include name="**/Test*.class"/>
+					<include name="**/*AgitarTest*.class"/>
+				</fileset>
+			</batchtest>
+		</super-runner>
+	</target>
+	
+	
+	<!-- Publish results to location ${artifacts.destination} -->
+	<target name="publish">
+		<mkdir dir="${project.dir.OpenApi_SDK_0113}/build/agitar/reports/latest/.logs"/>
+		<copy todir="${project.dir.OpenApi_SDK_0113}/build/agitar/reports/latest/.logs">
+			<fileset dir="${project.dir.OpenApi_SDK_0113}/build/agitar/.logs"/>
+		</copy>
+		<copy todir="${artifacts.destination}">
+			<fileset dir="${project.dir.OpenApi_SDK_0113}/build/agitar/reports/latest"/>
+		</copy>
+	</target>
+</project>

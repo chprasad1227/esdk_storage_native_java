@@ -1,0 +1,48 @@
+<head>
+<link href='/eSDK_OpenAPI_Demo_BS_JAVA/css/jquery.carousel.css'
+	rel='stylesheet' type='text/css'>
+<script src='/eSDK_OpenAPI_Demo_BS_JAVA/js/jquery.carousel.js'
+	type='text/javascript'></script>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/thickbox.js"
+	type="text/javascript"></script>
+<link href="/eSDK_OpenAPI_Demo_BS_JAVA/css/thickbox.css" media="screen"
+	rel="stylesheet" type="text/css" />
+</head>
+<script type="text/javascript">
+	function alarmClick() {
+		var treeObj = $.fn.zTree.getZTreeObj("ivsTree");
+		var nodes = treeObj.getNodes();
+		if (nodes.length > 0) {
+			var node = treeObj.getNodeByParam("id", 13);
+			if (node) {
+				treeObj.selectNode(node);
+			}
+		}
+		appendInterface('getAlarmEventInfo');
+	}
+</script>
+<body>
+	<div id="create_main"
+		style="background: url(&quot;/eSDK_OpenAPI_Demo_BS_JAVA/image/create_main.png&quot;) repeat-x scroll 0% 0% transparent; height: 335px; width: 100%;">
+		<table width="100%">
+			<tbody>
+				<tr>
+					<td width="36%"><div style="height: 300px;"></div></td>
+					<td width="20%"></td>
+					<td width="10%"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><a id="managerStorageLable"
+						languagetag="managerStorageLable"
+						onclick="appendInterface('createMappingView');"
+						style="font-size: 9px;cursor:pointer;">第三方管理存储设备</a> <a id="collectAlarmLable"
+						languagetag="collectAlarmLable" onclick="alarmClick();"
+						style="font-size: 9px; margin-left: 24px;cursor:pointer;">第三方搜集告警</a></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>

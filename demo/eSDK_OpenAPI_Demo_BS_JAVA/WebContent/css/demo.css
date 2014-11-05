@@ -1,0 +1,2435 @@
+@charset "utf-8";
+
+* {
+	margin: 0
+}
+
+html {
+	font-family: Arial, Microsoft Yahei, Verdana, Helvetica, AppleGothic,
+		sans-serif;
+	font-size: 13px;
+	text-align: 25px;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-align: 25px;
+	line-height: 23px;
+}
+
+h1 {
+	padding: 0.67em 0;
+	font-size: 25px;
+}
+
+h3 {
+	margin: 0.67em 0;
+	font-size: 2em;
+}
+
+td {
+	algin: left;
+	height: 22px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+img {
+	border: 0;
+}
+
+button,input,select,textarea {
+	margin: 0;
+	font-family: Microsoft Yahei;
+	font-size: 12px;
+	width: 216px;
+	width: 219px\0;
+}
+
+textarea {
+	height: 126px;
+}
+
+.left {
+	float: left;
+}
+
+.body {
+	background: #AAAAAA;
+	padding-bottom: 0;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	background: white;
+	margin: 0, auto;
+	width: 1170px;
+	max-width: 1170px;
+}
+
+.container:before,.container:after {
+	display: table;
+	content: " ";
+}
+
+.container:after {
+	clear: both;
+}
+
+.header {
+	border-bottom: 1px solid #CCCCCC;
+	height: 110px;
+	padding: 0;
+	margin: 0;
+}
+
+.portal {
+	border: 0px black solid;
+	height: 640px;
+	max-height: 640px;
+	width: 100%;
+	max-width: 1168px;
+}
+
+.logo {
+	float: right;
+	margin-top: 11px;
+}
+
+.select * {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+.select {
+	border: 1px solid #cccccc;
+	float: right;
+	display: inline;
+	algin: right;
+	margin-left: 300px;
+}
+
+.select div {
+	border: 1px solid #f9f9f9;
+	float: left;
+}
+
+.select>div {
+	width: 80px;
+	height: 14px;
+	overflow: hidden;
+}
+
+* html .select div select {
+	display: block;
+	float: left;
+	margin: -2px;
+}
+
+.select div>select {
+	display: block;
+	width: 84px;
+	float: none;
+	margin: -2px;
+	padding: 0px;
+}
+
+.select:hover {
+	border: 1px solid rgb(132, 208, 249);
+}
+
+.menu {
+	padding-top: 13px;
+	height: 635px;
+	width: 19%;
+	float: left;
+	border-right: 1px solid #CCCCCC;
+}
+
+.content {
+	height: 648px;
+	width: 860px;
+	float: left;
+}
+
+.footer {
+	clear: both;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #CCCCCC;
+	background: #EFEFEF;
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+.tabs {
+	height: 610px;
+	text-align: left;
+	width: 913px;
+	padding-left: 4px;
+}
+
+.main1 {
+	clear: both;
+	text-align: center;
+	/* 	height: 585px; */
+}
+
+.menu1box {
+	position: relative;
+	overflow: hidden;
+	height: 22px;
+	width: 600px;
+	text-align: left;
+}
+
+.menu1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.menu1 li {
+	float: left;
+	display: block;
+	cursor: pointer;
+	width: 150px;
+	text-align: center;
+	line-height: 21px;
+	height: 21px;
+}
+
+.menu1 li.hover {
+	background: url(../pic/tabclick.png) repeat-x;
+	border-left: 1px solid rgb(188, 187, 193);
+	border-top: 1px solid rgb(188, 187, 193);
+	border-right: 1px solid rgb(188, 187, 193);
+	font-weight: bold;
+	color: #E33E1F;
+}
+
+.main1box {
+	border: 1px solid rgb(188, 187, 193);
+	clear: both;
+	height: 610px;
+	width: 947px;
+	border: none;
+}
+
+.main1 ul {
+	display: none;
+}
+
+.main1 ul.block {
+	display: block;
+}
+
+.hr_horizontal {
+	color: rgb(188, 187, 193);
+	width: 1200px;
+	width: 1198px\0;
+	filter: alpha(opacity =                                       100, finishopacity
+		= 
+		 
+		     
+		                  
+		          0, style =              
+		        
+		               3);
+	opacity: .5;
+}
+
+.hr_horizontal_inoutput {
+	border-bottom: 1px;
+	overflow: hidden;
+	color: rgb(188, 187, 193);
+	width: 947px;
+	filter: alpha(opacity =             50);
+	opacity: .5;
+}
+
+.hr_horizontal_div {
+	margin-left: -15px;
+	margin-top: 12px;
+}
+
+.hr_horizontal_inoutputdiv {
+	margin-left: 1px;
+}
+
+.hr_horizontal_div_footer {
+	margin-left: -15px;
+	margin-top: 625px;
+}
+
+.hr_vertical {
+	color: rgb(188, 187, 193);
+	height: 608px;
+	width: 3px;
+	filter: alpha(opacity =  100, finishopacity
+		=  0, style =  3);
+	opacity: .5;
+}
+
+.hr_vertical_div {
+	float: left;
+	margin-left: 30px;
+}
+
+.inoutput_param_div {
+	padding-top: 20px;
+	height: 272px;
+	overflow-x: auto;
+}
+
+.inoutput_param_div1 {
+	padding-top: 20px;
+	overflow-x: auto;
+}
+
+.inoutput_param_div1 select {
+	width: 100px;
+}
+
+#lunCapacity {
+	width: 200px;
+}
+
+.status_div {
+	padding-top: 4px;
+	height: 55px;
+}
+
+.description_div {
+	text-align: left;
+	padding-top: 20px;
+	height: 544px;
+	overflow-x: auto;
+}
+
+.description_label {
+	margin-left: 35px;
+}
+
+.description_input_div {
+	text-align: left;
+	padding-top: 20px;
+}
+
+.description_output_div {
+	text-align: left;
+	padding-top: 20px;
+}
+
+.description_table {
+	width: 833px;
+	border-collapse: collapse;
+	border: none;
+	margin-left: 35px;
+	margin-top: 8px;
+}
+
+.description_table td {
+	border: 1px solid rgb(188, 187, 193);
+	padding-left: 10px;
+	height: 30px;
+}
+
+.sourcecode_div {
+	text-align: left;
+	padding-top: 20px;
+	margin-left: 35px;
+	height: 512px;
+	overflow-x: auto;
+}
+
+.btn {
+	border-right: rgb(188, 187, 193) 1px solid;
+	border-top: rgb(188, 187, 193) 1px solid;
+	font-size: 12px;
+	border-left: rgb(188, 187, 193) 1px solid;
+	cursor: pointer;
+	color: black;
+	padding: 3px;
+	border-bottom: rgb(188, 187, 193) 1px solid;
+	width: auto;
+	padding-top: 3px;
+}
+
+.btn_mouseover {
+	border-right: #7b9ebd 1px solid;
+	border-top: #7b9ebd 1px solid;
+	font-size: 12px;
+	border-left: #7b9ebd 1px solid;
+	cursor: pointer;
+	color: black;
+	padding: 3px;
+	border-bottom: #7b9ebd 1px solid;
+	width: auto;
+}
+
+.span_tip {
+	color: rgb(85, 85, 85);
+}
+
+.a_anchor {
+	text-decoration: none;
+	color: #1173DF;
+}
+
+.a_anchor_top {
+	padding-top: 25px;
+}
+
+.back_img {
+	width: 16px;
+	height: 16px;
+	padding: 2px 0 12px 5px;
+}
+
+.enabledlunadsearch {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/enabledSearch.png")
+		repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.disabledlunadsearch {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/disabledSearch.png")
+		repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.common_a:link {
+	color: #005FAD !important;
+}
+
+.common_a:visited {
+	color: #5395E0 !important;
+	text-decoration: underline;
+}
+
+.common_a:hover {
+	color: #005FAD !important;
+	text-decoration: underline;
+}
+
+.common_a:active {
+	color: #005FAD !important;
+}
+
+.mainpagelayout-top {
+	height: 33px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+.mainpagelayout-bottom {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 33px;
+	width: 100%;
+}
+
+.itabiteminner {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.split_image {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/toolbar_line.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	height: 25px;
+	width: 1px;
+}
+
+.i_ibutton_base table.i_ibutton_wrapper .more {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/signal_down_normal.png")
+		no-repeat scroll 100% 55% rgba(0, 0, 0, 0);
+	padding-left: 0;
+	padding-right: 15px;
+}
+
+.i_ibutton_base table.i_ibutton_wrapper .saveas {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/signal_down_normal.png")
+		no-repeat scroll 100% 55% rgba(0, 0, 0, 0);
+	padding-left: 0;
+	padding-right: 13px;
+}
+
+.selectrow {
+	height: 100%;
+	margin-left: 5px;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.selectrowimg {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/Information.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 48px;
+	width: 48px;
+}
+
+.selectrowtext {
+	color: #A0A0A0;
+	float: left;
+	font-size: 13px;
+	height: 48px;
+	line-height: 48px;
+}
+
+.advance_right_normal {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/right_normal.png")
+		no-repeat scroll left center rgba(0, 0, 0, 0);
+	height: 22px;
+	width: 22px;
+}
+
+.expand_right_normal {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/right_normal.png")
+		no-repeat scroll left center rgba(0, 0, 0, 0);
+	height: 22px;
+	width: 22px;
+}
+
+.expand_right_normal:hover {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/right_hover.png")
+		no-repeat scroll left center rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 22px;
+	width: 22px;
+}
+
+.expand_down_normal {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/down_normal.png")
+		no-repeat scroll left center rgba(0, 0, 0, 0);
+	height: 22px;
+	width: 22px;
+}
+
+.expand_down_normal:hover {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/down_hover.png")
+		no-repeat scroll left center rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 22px;
+	width: 22px;
+}
+
+.div_ldap_advance:hover {
+	cursor: pointer;
+}
+
+.div_ldap_toldap:hover {
+	cursor: pointer;
+}
+
+.createSnap {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/link_snapshot.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	border: medium none;
+	height: 16px;
+	margin-right: 8px;
+	width: 16px;
+}
+
+.createRReplication {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/link_remotereplication.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	border: medium none;
+	height: 16px;
+	margin-right: 8px;
+	width: 16px;
+}
+
+.createClone {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/link_clone.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	border: medium none;
+	height: 16px;
+	margin-right: 8px;
+	width: 16px;
+}
+
+.createCopy {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/link_copy.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	border: medium none;
+	height: 16px;
+	width: 16px;
+}
+
+.i-ilabel-image2 {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/comfirmdialog_danger.png");
+	background-repeat: no-repeat;
+	border: 0 none;
+	display: inline-block;
+	height: 48px;
+	position: relative;
+	width: 48px;
+}
+
+.v-comment {
+	color: #808080;
+	font-size: 12px;
+}
+
+.lookupClass {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/down_normal.png")
+		no-repeat scroll right center rgba(0, 0, 0, 0) !important;
+	height: 22px;
+}
+
+.text_link {
+	color: #005FAD;
+	font-size: 12px;
+}
+
+.text_link:hover {
+	border-bottom: 1px solid #005FAD;
+	cursor: pointer;
+}
+
+.text_link_clicked {
+	color: #5395E0;
+	font-size: 12px;
+}
+
+.text_link_clicked:hover {
+	border-bottom: 1px solid #5395E0;
+	cursor: pointer;
+}
+
+.iscsiPortRouteLabel:hover {
+	cursor: pointer;
+}
+
+.licenseDifferent {
+	color: #0000FF;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+.licenseDifferent:hover {
+	cursor: pointer;
+}
+
+.deletePair:hover {
+	cursor: pointer;
+}
+
+.snapvisible {
+	visibility: visible;
+}
+
+.snaphidden {
+	visibility: hidden;
+}
+
+.schem-snap-graph {
+	height: 246px;
+}
+
+.schem-snap-running {
+	float: left;
+	height: 100%;
+}
+
+.schem-snaps-unactive {
+	float: left;
+	margin-top: 110px;
+}
+
+.schem-snap-unactive {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_unactive.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.schem-snap-even {
+	height: 110px;
+	margin-left: 50px;
+	white-space: nowrap;
+}
+
+.schem-snap-odd {
+	height: 110px;
+	margin-top: -12px;
+	white-space: nowrap;
+}
+
+.schem-snap-arrow-right {
+	float: left;
+	margin-bottom: 121px;
+}
+
+.schem-snap-lun-right {
+	float: left;
+	height: 100%;
+}
+
+.schem-snap-dateselector {
+	float: left;
+	height: 100%;
+	margin-left: 1px;
+	width: 180px;
+}
+
+.schem-snap-left {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_left.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	float: left;
+	height: 100%;
+	width: 17px;
+}
+
+.schem-snap-tip {
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 80px;
+}
+
+.schem-snap {
+	float: left;
+	height: 56px;
+	width: 100%;
+}
+
+.schem-snap-normal {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_nomal.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.schem-snap-warn {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_warn.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.schem-snap-bar-nomal {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_bar_nomal.png")
+		repeat-x scroll left center rgba(0, 0, 0, 0);
+	height: 26px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.schem-snap-bar-rollback {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_bar_rollback.png")
+		repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	height: 5px;
+	left: -10px;
+	position: relative;
+	width: 110%;
+}
+
+.schem-snap-arrow-up-nomal {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_arrow_up.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	bottom: -19px;
+	height: 33px;
+	position: absolute;
+	width: 100%;
+}
+
+.schem-snap-arrow-up-rollback {
+	height: 33px;
+	position: absolute;
+	top: 90px;
+	width: 100%;
+}
+
+.schem-snap-arrow-up-rollback>.rollbackline {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_rollback-vline.png")
+		repeat-y scroll center center rgba(0, 0, 0, 0);
+	height: 21px;
+	width: 100%;
+}
+
+.schem-snap-arrow-up-rollback>.rollback-arrow-bottom {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_arrow_bottom_rollback.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	height: 12px;
+	width: 100%;
+}
+
+.schem-snap-arrow-down-nomal {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_arrow_down.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	height: 33px;
+	width: 100%;
+}
+
+.schem-snap-arrow-down-rollback {
+	height: 33px;
+	width: 100%;
+}
+
+.schem-snap-arrow-down-rollback>.rollbackline {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_rollback-vline.png")
+		repeat-y scroll center center rgba(0, 0, 0, 0);
+	height: 21px;
+	width: 100%;
+}
+
+.schem-snap-arrow-down-rollback>.rollback-arrow-bottom {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_arrow_up_rollback.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	height: 12px;
+	width: 100%;
+}
+
+.schem-snap-arrow-down-unactive {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_arrow_down_unactive.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	float: left;
+	height: 33px;
+	width: 100%;
+}
+
+.schem-snap-arrow-right-nomal {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_arrow_right_nomal.png")
+		no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
+	float: left;
+	height: 100%;
+	width: 17px;
+}
+
+.schem-snap-arrow-right-rollback {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_arrow_right_rollback.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	float: left;
+	height: 100%;
+	width: 17px;
+}
+
+.schem-snap-srclun {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/schem_snap_srclun.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	height: 70px;
+	margin-top: 90px;
+	width: 65px;
+}
+
+.hostPortAttentionClass {
+	height: 40px;
+	position: absolute;
+	width: 270px;
+}
+
+.hostPortAttentionImageClass {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/bulb.png") no-repeat
+		scroll center center rgba(0, 0, 0, 0);
+	float: left;
+	height: 20px;
+	width: 20px;
+}
+
+.hostPortAttentionDescriptionClass {
+	float: left;
+	margin-top: 2px;
+}
+
+.hostImageClass {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/feature_host_hostportline.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	height: 100%;
+	margin-top: 20px;
+	position: absolute;
+	width: 60px;
+}
+
+.hostAssociatedPortClass {
+	height: 98%;
+	margin-left: 65px;
+	margin-top: 15px;
+	overflow: hidden;
+	position: absolute;
+	width: 200px;
+}
+
+.allPortClass {
+	width: 195px;
+}
+
+.portAreaClass {
+	border: 1px solid #C9C9C9;
+	bottom: 11px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	position: absolute;
+	top: 55px;
+	width: 195px;
+}
+
+.portTypeDiv {
+	margin-bottom: 15px;
+}
+
+.hostPortTitleClass {
+	height: 20px;
+	overflow: hidden;
+	width: 250px;
+}
+
+.hostPortDashedLineClass {
+	border-bottom: 1px solid #D3D3D3;
+	float: left;
+	height: 0;
+	margin-left: 2px;
+	margin-top: 8px;
+	width: 100px;
+}
+
+.hostAssociatedIscsiPortClass {
+	border: 1px dashed #808080;
+	width: 170px;
+}
+
+.hostAssociatedFcPortClass {
+	border: 1px dashed #808080;
+	margin-top: 2px;
+	width: 170px;
+}
+
+.hostAssociatedFcoePortClass {
+	border: 1px dashed #808080;
+	margin-top: 2px;
+	width: 170px;
+}
+
+.portItemDiv {
+	clear: both;
+	display: block;
+	height: 18px;
+}
+
+.iscsiPortImageDiv {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/devicefigure/large/devicefigure_eth_right.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	float: left;
+	height: 18px;
+	width: 20px;
+}
+
+.fcPortImageDiv {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/devicefigure/large/devicefigure_fcport_v.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	float: left;
+	height: 18px;
+	width: 20px;
+}
+
+.portDescriptionDiv {
+	float: left;
+	height: 22px;
+	margin-top: 2px;
+}
+
+.bracket_left_background {
+	background-image: url("../../ibase/image/r1c2_bg.jpg");
+	background-repeat: repeat-y;
+	height: 100%;
+	position: relative;
+	width: 36px;
+}
+
+.bracket_right_background {
+	background-image: url("../../ibase/image/r1c6_bg.jpg");
+	background-repeat: repeat-y;
+	height: 100%;
+	position: relative;
+	width: 37px;
+}
+
+.bracket_left_middle {
+	background-image: url("../../ibase/image/r1c2_middle.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 100%;
+	position: relative;
+	width: 36px;
+}
+
+.bracket_left_top {
+	background-image: url("../../ibase/image/r1c2_top.jpg");
+	background-repeat: no-repeat;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	width: 36px;
+}
+
+.bracket_left_bottom {
+	background-image: url("../../ibase/image/r1c2_bottom.jpg");
+	background-repeat: no-repeat;
+	bottom: 0;
+	height: 30px;
+	position: absolute;
+	width: 36px;
+}
+
+.bracket_right_middle {
+	background-image: url("../../ibase/image/r1c6_middle.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 100%;
+	position: relative;
+	width: 37px;
+}
+
+.bracket_right_top {
+	background-image: url("../../ibase/image/r1c6_top.jpg");
+	background-repeat: no-repeat;
+	height: 28px;
+	position: absolute;
+	top: 0;
+	width: 37px;
+}
+
+.bracket_right_bottom {
+	background-image: url("../../ibase/image/r1c6_bottom.jpg");
+	background-repeat: no-repeat;
+	bottom: 0;
+	height: 27px;
+	position: absolute;
+	width: 37px;
+}
+
+.pop_normal_background {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_background_normal.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 32px;
+}
+
+.pop_normal_background_grey {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_background_normal_grey.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 32px;
+}
+
+.pop_normal_background_grey {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_background_normal_grey.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 32px;
+}
+
+.pop_normal_middle {
+	background-image: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_middle.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 32px;
+	width: 14px;
+}
+
+.pop_normal_middle_grey {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_middle_grey.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 32px;
+	width: 14px;
+}
+
+.pop_normal_right {
+	background-image: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_right.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 32px;
+	width: 9px;
+}
+
+.pop_normal_right_grey {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_right_grey.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 32px;
+	width: 9px;
+}
+
+.pop_normal_left {
+	background-image: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_left.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 32px;
+	width: 9px;
+}
+
+.pop_normal_left_grey {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pop_left_grey.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 32px;
+	width: 9px;
+}
+
+.pop_normal_outer {
+	bottom: 15%;
+	height: 32px;
+	left: 35%;
+	position: absolute;
+	width: 80px;
+}
+
+.pop_normal_text {
+	bottom: 10%;
+	color: #FFFFFF;
+	font-weight: bolder;
+	height: 32px;
+	left: 35%;
+	position: absolute;
+	width: 80px;
+	z-index: 2;
+}
+
+.pop_small_outer {
+	bottom: 12%;
+	height: 32px;
+	left: 40%;
+	position: absolute;
+	width: 80px;
+}
+
+.pop_small_text {
+	bottom: 5%;
+	color: #FFFFFF;
+	font-weight: bold;
+	height: 32px;
+	left: 34%;
+	position: absolute;
+	width: 80px;
+	z-index: 2;
+}
+
+.sync_arrow_background {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.sync_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrowhead.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 21px;
+}
+
+.sync_arrowtail {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrowtail.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 8px;
+}
+
+.sync_arrow_background_left {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.sync_arrowmiddle {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 32px;
+}
+
+.sync_arrow_background_right {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.sync_arrowtail_samll {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrowtail.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 8px;
+}
+
+.sync_arrow_background_left_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.sync_arrowmiddle_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 32px;
+}
+
+.sync_arrow_background_right_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.sync_arrowhead_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrowhead.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 21px;
+}
+
+.reverse_sync_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrowtail.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 21px;
+}
+
+.reverse_sync_arrowtail {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrowhead.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 21px;
+}
+
+.reverse_sync_arrowmiddle {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 32px;
+}
+
+.async_arrow_background_left {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrow_background_left.png");
+	background-repeat: repeat-x;
+	height: 36px;
+	width: 100%;
+}
+
+.async_arrowmiddle {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrowmiddle.png");
+	background-repeat: repeat-x;
+	height: 36px;
+	width: 32px;
+}
+
+.async_arrow_background_right {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrow_background_right.png");
+	background-repeat: repeat-x;
+	height: 36px;
+	width: 100%;
+}
+
+.async_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrowhead.png");
+	background-repeat: no-repeat;
+	height: 36px;
+	width: 21px;
+}
+
+.async_arrowtail {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrowtail.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 8px;
+}
+
+.async_arrow_background_left_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrow_background_left_dialog.png");
+	background-repeat: repeat-x;
+	height: 28px;
+	width: 100%;
+}
+
+.async_arrowmiddle_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrowmiddle_dialog.png");
+	background-repeat: repeat-x;
+	height: 28px;
+	width: 26px;
+}
+
+.async_arrow_background_right_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrow_background_right_dialog.png");
+	background-repeat: repeat-x;
+	height: 28px;
+	width: 100%;
+}
+
+.async_arrowhead_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrowhead_dialog.png");
+	background-repeat: no-repeat;
+	height: 28px;
+	width: 16px;
+}
+
+.async_arrowtail_small {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/async_arrowtail_dialog.png");
+	background-repeat: no-repeat;
+	height: 28px;
+	width: 8px;
+}
+
+.switch_arrow_left {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/switch_left.png");
+	background-repeat: no-repeat;
+	height: 43px;
+	width: 24px;
+}
+
+.switch_arrow_right {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/switch_right.png");
+	background-repeat: no-repeat;
+	height: 43px;
+	width: 24px;
+}
+
+.switch_arrow_background {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/switch_background.png");
+	background-repeat: repeat-x;
+	height: 43px;
+}
+
+.text_black {
+	color: #333333;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.text_title {
+	color: #333333;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.text_normal {
+	color: #333333;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.text_grey {
+	color: #707070;
+	font-size: 12px;
+}
+
+.pair_inner {
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.right_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrowhead.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 21px;
+}
+
+.right_arrowtail {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrowtail.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 8px;
+}
+
+.right_arrow_background_left {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.right_arrowmiddle {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 32px;
+}
+
+.right_arrow_background_right {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.left_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrowhead.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 21px;
+}
+
+.left_arrowtail {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrowtail.png");
+	background-repeat: no-repeat;
+	height: 25px;
+	width: 8px;
+}
+
+.left_arrow_background_left {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.left_arrowmiddle {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 32px;
+}
+
+.left_arrow_background_right {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/sync_reverse_arrow_background.png");
+	background-repeat: repeat-x;
+	height: 25px;
+	width: 100%;
+}
+
+.hostportline_leftpane {
+	border: 1px solid #0000FF;
+	height: 260px;
+	overflow: auto;
+	width: 300px;
+}
+
+.hostportline_rightpane {
+	border: 1px solid #FF0000;
+	height: 260px;
+	overflow: auto;
+	width: 1000px;
+}
+
+.diskpool_capc_legend_swatch {
+	border-style: solid;
+	border-width: 0;
+	float: left;
+	height: 12px;
+	width: 12px;
+}
+
+.diskpool_capc_legend_item {
+	display: inline-block;
+	height: 25px;
+	vertical-align: middle;
+	width: 200px;
+}
+
+.diskpool_sparecap_left {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/sparecap_left.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+	width: 3px;
+}
+
+.diskpool_sparecap_center {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/sparecap_center.png")
+		repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+}
+
+.diskpool_sparecap_right {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/sparecap_right.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+	width: 2px;
+}
+
+.diskpool_usedsparecap_center {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/usedsparecap_center.png")
+		repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+}
+
+.diskpool_usedsparecap_right {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/usedsparecap_right.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+	width: 2px;
+}
+
+.diskpool_usedcap_center {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/usedcap_center.png")
+		repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+}
+
+.diskpool_usedcap_right {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/usedcap_right.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+	width: 2px;
+}
+
+.diskpool_freecap_center {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/freecap_center.png")
+		repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+	width: auto;
+}
+
+.diskpool_freecap_right {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/freecap_right.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	float: left;
+	height: 63px;
+	width: 2px;
+}
+
+.i_storagepool_info {
+	background: url("../../ibase/image/createMapping1.png") no-repeat scroll
+		center center rgba(0, 0, 0, 0);
+}
+
+.i_info_iconbutton {
+	background: url("../../devicemanager/image/tooltips_help.png") no-repeat
+		scroll center center rgba(0, 0, 0, 0);
+}
+
+.i_info_iconbutton2 {
+	background: url("../../devicemanager/image/tooltips_help.png") no-repeat
+		scroll center center rgba(0, 0, 0, 0);
+	padding-top: 4px;
+}
+
+.i_datarollback_info {
+	background: url("../../ibase/image/prompt.png") no-repeat scroll center
+		center rgba(0, 0, 0, 0);
+}
+
+div.diskpool_datalayout_refresh {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/table_refresh.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	height: 20px;
+	width: 20px;
+}
+
+div.diskpool_datalayout_refresh_waiting {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/pagination/loading.gif")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+div.diskpool_datalayout_refresh:hover {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/table_refresh.png")
+		no-repeat scroll center center rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+}
+
+td.diskpool_create_info {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/diskpool/Information.png")
+		no-repeat scroll left top rgba(0, 0, 0, 0);
+	height: 48px;
+	vertical-align: top;
+	width: 48px;
+}
+
+.tabdiv {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+.checkbox {
+	height: 14px;
+	position: absolute;
+	right: 7px;
+	top: 5px;
+	width: 14px;
+}
+
+.checkboxselect {
+	background-image:
+		url("../../ibase/bin/Images/iCheckBox/check_select.png");
+}
+
+#snapGraph .checkboxnoselect {
+	background-image: url("../../ibase/bin/Images/iCheckBox/check.png");
+}
+
+#snapGraph .top_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/top_border_repeat_x.png");
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	height: 4px;
+}
+
+#snapGraph .left_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left_top.png");
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	height: 4px;
+	width: 6px;
+}
+
+#snapGraph .right_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right_top.png");
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	height: 4px;
+	padding: 0;
+	width: 6px;
+}
+
+#snapGraph .left_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left_border_repeat_y.png");
+	background-position: right top;
+	background-repeat: repeat-y;
+	width: 6px;
+}
+
+#snapGraph .right_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right_border_repeat_y.png");
+	background-position: left top;
+	background-repeat: repeat-y;
+	width: 6px;
+}
+
+#snapGraph .center {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/center_repeat.png");
+	background-repeat: repeat;
+	padding: 0;
+}
+
+#snapGraph .bottom_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/bottom_border_repeat_x.png");
+	background-position: left top;
+	background-repeat: repeat-x;
+	height: 9px;
+}
+
+#snapGraph .left_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left_bottom.png");
+	background-position: right top;
+	background-repeat: no-repeat;
+	float: left;
+	height: 9px;
+	width: 6px;
+}
+
+#snapGraph .right_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right_bottom.png");
+	background-position: left top;
+	background-repeat: no-repeat;
+	height: 9px;
+	width: 6px;
+}
+
+.clone_top_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/top_border_repeat_x.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 4px;
+	width: 400px;
+}
+
+.clone_left_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left_top.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 4px;
+	width: 6px;
+}
+
+.clone_right_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right_top.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 4px;
+	width: 6px;
+}
+
+.clone_left_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left_border_repeat_y.png");
+	background-repeat: repeat-y;
+	float: left;
+	height: 65px;
+	width: 6px;
+}
+
+.clone_right_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right_border_repeat_y.png");
+	background-repeat: repeat-y;
+	float: left;
+	height: 65px;
+	width: 6px;
+}
+
+.clone_center {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/center_repeat.png");
+	background-repeat: repeat;
+	float: left;
+	height: 65px;
+	width: 400px;
+}
+
+.clone_bottom_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/bottom_border_repeat_x.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 9px;
+	width: 400px;
+}
+
+.clone_left_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left_bottom.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 9px;
+	width: 6px;
+}
+
+.clone_right_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right_bottom.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 9px;
+	width: 6px;
+}
+
+.clone_sketch_top_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/up-mid.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 31px;
+	width: 400px;
+}
+
+.clone_sketch_left_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left-up-conner.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 31px;
+	width: 3px;
+}
+
+.clone_sketch_right_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right-up-conner.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 31px;
+	width: 5px;
+}
+
+.clone_sketch_left_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left-mid.png");
+	background-repeat: repeat-y;
+	float: left;
+	height: 100px;
+	width: 3px;
+}
+
+.clone_sketch_right_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right-mid.png");
+	background-repeat: repeat-y;
+	float: left;
+	height: 100px;
+	width: 5px;
+}
+
+.clone_sketch_center {
+	float: left;
+	height: 100px;
+	width: 400px;
+}
+
+.clone_sketch_bottom_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/down-mid.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 6px;
+	width: 400px;
+}
+
+.clone_sketch_left_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/left-down-conner.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 6px;
+	width: 3px;
+}
+
+.clone_sketch_right_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/clone/right-down-conner.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 6px;
+	width: 5px;
+}
+
+.left_mv_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/mappingview/left.png");
+	float: left;
+	height: 25px;
+	width: 20px;
+}
+
+.middle_mv_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/mappingview/middle.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 25px;
+	width: 120px;
+}
+
+.right_mv_arrowhead {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/mappingview/right.png");
+	float: left;
+	height: 25px;
+	width: 20px;
+}
+
+.luncopy_top_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/top_border_repeat_x.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 4px;
+	width: 388px;
+}
+
+.luncopy_left_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/left_top.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 4px;
+	width: 6px;
+}
+
+.luncopy_right_top {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/right_top.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 4px;
+	width: 6px;
+}
+
+.luncopy_left_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/left_border_repeat_y.png");
+	background-repeat: repeat-y;
+	float: left;
+	height: 110px;
+	width: 6px;
+}
+
+.luncopy_right_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/right_border_repeat_y.png");
+	background-repeat: repeat-y;
+	float: left;
+	height: 110px;
+	width: 6px;
+}
+
+.luncopy_center {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/center_repeat.png");
+	background-repeat: repeat;
+	float: left;
+	height: 110px;
+	width: 388px;
+}
+
+.luncopy_bottom_border {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/bottom_border_repeat_x.png");
+	background-repeat: repeat-x;
+	float: left;
+	height: 9px;
+	width: 388px;
+}
+
+.luncopy_left_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/left_bottom.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 9px;
+	width: 6px;
+}
+
+.luncopy_right_bottom {
+	background-image:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/luncopy/right_bottom.png");
+	background-repeat: no-repeat;
+	float: left;
+	height: 9px;
+	width: 6px;
+}
+
+.luncopy_text {
+	color: #333333;
+	font-size: 12px;
+	font-weight: bold;
+	overflow: hidden;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 81px;
+}
+
+.igrid_ibutton_split_style {
+	clear: both;
+	height: 5px;
+}
+
+.checkbox_group_infoicon {
+	background-image: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/info.png");
+	background-repeat: no-repeat;
+	display: table-cell;
+	height: 16px;
+	padding-top: 1px;
+	width: 16px;
+}
+
+.checkbox_group_erroricon {
+	background-image: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/error.png");
+	background-repeat: no-repeat;
+	display: table-cell;
+	height: 16px;
+	padding-right: 3px;
+	padding-top: 1px;
+	width: 16px;
+}
+
+.checkbox_group_errortitle {
+	color: #E83917;
+	display: table-cell;
+	height: 16px;
+	vertical-align: middle;
+	word-wrap: break-word;
+}
+
+.checkbox_group_body_innerdiv {
+	background-color: #FFFFFF;
+	display: table;
+	width: auto;
+}
+
+.quicklink_item_tip_normal {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_tip_bg.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	height: 30px;
+	left: 30px;
+	position: absolute;
+	text-align: center;
+	top: 8px;
+	width: 47px;
+	word-break: break-all;
+}
+
+.quicklink_item_tip_grey {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_tip_bg_grey.png")
+		no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #A0A0A0;
+	height: 30px;
+	left: 30px;
+	position: absolute;
+	text-align: center;
+	top: 8px;
+	width: 47px;
+	word-break: break-all;
+}
+
+.quicklink_item {
+	cursor: pointer;
+	margin-bottom: 15px;
+	position: relative;
+	width: 80px;
+}
+
+.quicklink_item_center {
+	background-color: #FF0000;
+	height: auto;
+	width: 80px;
+}
+
+.quicklink_item_des {
+	float: none;
+	font-size: 12px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.quicklink_item_des_disable {
+	color: #0000FF;
+	float: none;
+	font-size: 12px;
+	font-style: normal;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.quicklink_item_mouseover {
+	background-color: #FF0000;
+}
+
+.reslink_bg_base {
+	height: 260px;
+	margin-left: 40px;
+	width: 1420px;
+}
+
+.reslink_bg_left {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_bg_left.png")
+		no-repeat scroll center bottom rgba(0, 0, 0, 0);
+	float: left;
+	height: 260px;
+	width: 10px;
+}
+
+.reslink_bg_right {
+	background: url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_bg_right.png")
+		no-repeat scroll center bottom rgba(0, 0, 0, 0);
+	float: left;
+	height: 260px;
+	width: 10px;
+}
+
+.reslink_bg_center {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_bg_center.png") repeat-x
+		scroll center bottom rgba(0, 0, 0, 0);
+	float: left;
+	height: 260px;
+	text-align: center;
+	width: 1400px;
+}
+
+.reslink_single_arrow {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_single_arrow.png")
+		no-repeat scroll center bottom rgba(0, 0, 0, 0);
+	height: 29px;
+	width: 83px;
+}
+
+.reslink_complex_arrow_center {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_arrow_center.png")
+		no-repeat scroll center bottom rgba(0, 0, 0, 0);
+	height: 30px;
+	width: 101px;
+}
+
+.reslink_complex_arrow_top {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_arrow_top.png")
+		no-repeat scroll center bottom rgba(0, 0, 0, 0);
+	height: 30px;
+	width: 101px;
+}
+
+.reslink_complex_arrow_bottom {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_arrow_bottom.png")
+		no-repeat scroll center bottom rgba(0, 0, 0, 0);
+	height: 17px;
+	width: 101px;
+}
+
+.reslink_complex_arrow_frame {
+	background:
+		url("/eSDK_OpenAPI_Demo_BS_JAVA/image/reslink_arrow_base.png")
+		repeat-y scroll 0 0 rgba(0, 0, 0, 0);
+	height: 60px;
+	width: 101px;
+}
+
+.configpane_outer {
+	margin-left: 10px;
+	margin-top: 15px;
+}
+
+.view1_searchArea {
+	float: right;
+	height: 29px;
+	margin-right: 2px;
+	margin-top: 4px;
+}
+
+.view2_searchArea {
+	float: right;
+	height: 29px;
+	margin-right: 1px;
+}
+
+.view1_toolArea {
+	float: left;
+	height: 29px;
+	margin-left: 1px;
+	margin-top: 4px;
+}
+
+.container>.operationArea {
+	float: left;
+}
+
+.container>.searchArea {
+	float: right;
+	height: 33px;
+	margin-right: 2px;
+}
+
+.container>.tableArea {
+	height: 95%;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	width: 100%;
+}
+
+.luncopyconfirmfont {
+	display: inline-block;
+	max-width: 200px;
+	min-width: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.luncopy_graph_table_single {
+	height: 100%;
+}
+
+.luncopy_graph_remote_out {
+	height: 120px;
+	position: relative;
+	top: 0;
+	width: 380px;
+}
+
+.luncopy_graph_remote_inner {
+	height: 120px;
+	position: relative;
+	top: 0;
+	width: 500px;
+}
+
+.iPagination_itemsPanel {
+	display: block;
+	float: left;
+}
+
+.nodata {
+	height: 100%;
+	width: 100%;
+}
+
+.nodatainfo {
+	color: #A0A0A0;
+	float: left;
+	font-size: 13px;
+	height: 48px;
+	line-height: 48px;
+	margin-top: 10px;
+	width: 200px;
+}
+
+.consistent_error_show {
+	display: block;
+	float: left;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+.consistent_error_hidden {
+	display: none;
+	float: left;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+td.threshold_td_class {
+	height: 19px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+td.capacity-legend {
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+div.capacity-word-style {
+	display: block;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 200px;
+	word-break: keep-all;
+}
+
+.capicitybox {
+	border-collapse: collapse;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+	display: table;
+	height: 70px;
+	position: relative;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.capicitybox .freecap {
+	background-image: -moz-linear-gradient(center top, #9EC2FF, #9EC2FF);
+	display: table-cell;
+	width: 0;
+}
+
+.capicitybox .alloccap {
+	background-image: -moz-linear-gradient(center top, #FF9036, #FF9036);
+	display: table-cell;
+	width: 0;
+}
+
+.capicitybox .standbycap {
+	background: -moz-linear-gradient(center top, #D1D1D1, #D1D1D1) repeat
+		scroll 0 0 #808080;
+	display: table-cell;
+	width: 0;
+}
+
+.capicitybox .usedstandbycapover {
+	background: -moz-linear-gradient(center top, #676767, #676767) repeat
+		scroll 0 0 #808080;
+	display: table-cell;
+	width: 0;
+}
+
+.capicitybox .usedstandbycap {
+	background: -moz-linear-gradient(center top, #676767, #676767) repeat
+		scroll 0 0 #808080;
+	height: 50px;
+	margin: -25px 0 0;
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	width: 0;
+}
+
+.legendbox {
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+	height: 12px;
+	overflow: hidden;
+	width: 12px;
+}
+
+.legendbox .allocatelegend {
+	background-image: -moz-linear-gradient(center top, #FF9036, #FF9036);
+	height: 100%;
+	width: 100%;
+}
+
+.legendbox .freelegend {
+	background: -moz-linear-gradient(center top, #9EC2FF, #9EC2FF) repeat
+		scroll 0 0 #0000FF;
+	height: 100%;
+	width: 100%;
+}
+
+.legendbox .hotsparelegend {
+	background: -moz-linear-gradient(center top, #D1D1D1, #D1D1D1) repeat
+		scroll 0 0 #808080;
+	height: 100%;
+	width: 100%;
+}
+
+.legendbox .dataprotectlegend {
+	background: -moz-linear-gradient(center top, #D1D1D1, #D1D1D1) repeat
+		scroll 0 0 #808080;
+	height: 100%;
+	width: 100%;
+}
+
+.legendbox .usedhotsparelegend {
+	background: -moz-linear-gradient(center top, #676767, #676767) repeat
+		scroll 0 0 #808080;
+	height: 100%;
+	width: 100%;
+}
+
+.chinese,.chinese * {
+	font-family: "Microsoft Yahei", "SimSun", "Arial" !important;
+}
+
+.section {
+	width: 860px;
+	height: 300px;
+	padding-top: 20px;
+	overflow-x: auto;
+}
+
+.menu_td {
+	background-color: #ffff99;
+	width: 100px;
+	font-size: 16px;
+}
+
+.td {
+	background-color: #EEEEEE;
+	height: 46px;
+	width: 400px;
+	font-size: 16px;
+}
+
+.td_label {
+	background-color: #A1C1DF;
+	height: 32px;
+	width: 400px;
+	font-size: 16px;
+}
+
+.zxx_text_overflow {
+	width: 400px;
+}
+}

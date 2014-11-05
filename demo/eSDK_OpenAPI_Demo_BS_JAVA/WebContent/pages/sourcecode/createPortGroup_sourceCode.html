@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f7f5f">//&nbsp;传入请求参数</font><br />
+<font color="#000000">String&nbsp;name&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;name&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">String&nbsp;description&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;description&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">String&nbsp;associateId&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;associateId&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#3f7f5f">//&nbsp;创建端口组对象</font><br />
+<font color="#000000">PortGroupMO&nbsp;mo&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">PortGroupMO</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#3f7f5f">//&nbsp;填写端口组名称,描述</font><br />
+<font color="#000000">mo.setName</font><font color="#000000">(</font><font color="#000000">name</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">description</font><font color="#000000">))</font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">mo.setDescription</font><font color="#000000">(</font><font color="#000000">description</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">}</font><br />
+<font color="#3f7f5f">//&nbsp;获取端口组接口实现类</font><br />
+<font color="#000000">PortGroupHandler&nbsp;portGroupHandler;</font><br />
+<font color="#7f0055"><b>try</b></font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">portGroupHandler&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#000000">PortGroupHandler</font><font color="#000000">)&nbsp;</font><font color="#000000">manager.getHandler</font><font color="#000000">(</font><font color="#000000">HandlerConstant.PORTGROUP_HANDLER</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;调用端口组的create方法，创建端口组</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">PortGroupMO&nbsp;result&nbsp;=&nbsp;portGroupHandler.create</font><font color="#000000">(</font><font color="#000000">mo</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">associateId</font><font color="#000000">))</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;在创建出的端口组中添加端口</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">portGroupHandler.createAssociateWithPort</font><font color="#000000">(</font><font color="#000000">result.getId</font><font color="#000000">()</font><font color="#000000">,&nbsp;associateId</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#000000">}</font><br />
+<font color="#7f0055"><b>catch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">ApiException&nbsp;e</font><font color="#000000">)</font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">gson.toJson</font><font color="#000000">(</font><font color="#000000">e.getMessage</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">gson.toJson</font><font color="#000000">(</font><font color="#2a00ff">&#34;success&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>

@@ -1,0 +1,185 @@
+<head>
+<link rel="stylesheet" href="/eSDK_OpenAPI_Demo_BS_JAVA/css/tree.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="/eSDK_OpenAPI_Demo_BS_JAVA/css/zTreeStyle.css" type="text/css">
+<link rel="stylesheet" href="/eSDK_OpenAPI_Demo_BS_JAVA/css/demo.css"
+	type="text/css" />
+<link href="/eSDK_OpenAPI_Demo_BS_JAVA/css/thickbox.css" media="screen"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+	src="/eSDK_OpenAPI_Demo_BS_JAVA/js/jquery-1.8.3.js"></script>
+<script type="text/javascript"
+	src="/eSDK_OpenAPI_Demo_BS_JAVA/js/jquery.ztree.core-3.5.js"></script>
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/en-us.js"
+	type="text/javascript"></script>
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/zh-cn.js"
+	type="text/javascript"></script>
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/demotools.js"
+	type="text/javascript"></script>
+
+<script type="text/javascript">
+	function createHost() {
+		var id = $("#hostId").val();
+		var name = $("#hostname").val();
+		var description = $("#hostDescription").val();
+		var location = $("#hostLocation").val();
+		var ip = $("#hostIP").val();
+		var operationSystem = $("#operationSystem").val();
+		var initiator = $("#initiator").val();
+		var initiatorType = $("#initiatorType").val();
+		// 简单参数校验
+		if (isEmpty(name)) {
+			$("#hostnameErrTip").html(controller.language.titles["nameErrTip"]);
+			return false;
+		} else {
+			$("#hostnameErrTip").html("");
+		}
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&id=" + id + "&name=" + name + "&description="
+					+ description + "&location=" + location + "&ip=" + ip
+					+ "&operationSystem=" + operationSystem + "&initiator="
+					+ initiator + "&initiatorType=" + initiatorType
+					+ "&method=createHost",
+			async : false,
+			success : function(data) {
+				if ("success" == data) {
+					self.parent.tb_remove();
+				} else {
+					$("#Host_status").html(data);
+				}
+			},
+			error : function(data) {
+				$("#Host_status").html(
+						controller.language.titles["operationFailed"]);
+			},
+			beforeSend : function() {
+				$("#Host_status").html("");
+			}
+		});
+	}
+	function load() {
+		changeLang();
+		updateInitiator();
+	}
+	function updateInitiator() {
+		var initiatorType = $("#initiatorType").val();
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&initiatorType=" + initiatorType
+					+ "&method=getBatchInitiator",
+			async : false,
+			success : function(data) {
+				$("#initiator").empty();
+				var nullOption = document.createElement("OPTION");
+				document.getElementById("initiator").options.add(Option);
+				for ( var i = 0; i < data.length; i++) {
+					var id = data[i];
+					var Option = document.createElement("OPTION");
+					Option.value = id;
+					Option.text = id;
+					document.getElementById("initiator").options.add(Option);
+				}
+			}
+		});
+	}
+</script>
+
+
+</head>
+<body onload="load()">
+	<div class="inoutput_param_div1">
+		<table width="100%">
+			<tr>
+				<td width="10%"></td>
+				<td></td>
+				<td width="40%"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left" width="25%"><font color='red'>*</font> <label
+					id="nameLabel"></label></td>
+				<td align="left"><input type="text" id="hostname"
+					name="hostname"></td>
+				<td align="left"><span class="span_tip" id="hostnameErrTip">
+				</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='white'>*</font> <label
+					id="idLabel"></label></td>
+				<td align="left"><input type="text" id="hostId" name="hostId"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='white'>*</font> <label
+					id="descriptionLabel"></label></td>
+				<td align="left"><input type="text" id="hostDescription"
+					name="hostDescription"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='white'>*</font> <label
+					id="ipLabel"></label></td>
+				<td align="left"><input type="text" id="hostIP" name="hostIP" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='white'>*</font> <label
+					id="hostLocationLabel"></label></td>
+				<td align="left"><input type="text" id="hostLocation"
+					name="hostLocation"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='red'>*</font> <label
+					id="operationSystemLabel"></label></td>
+				<td align="left"><select id="operationSystem"
+					name="operationSystem" style="width: 200px;">
+						<option value="0">Linux</option>
+						<option value="1">Windows</option>
+						<option value="2">Solaris</option>
+						<option value="3">HPUX</option>
+						<option value="4">AIX</option>
+						<option value="5">XenServer</option>
+						<option value="6">MacOS</option>
+						<option value="7">ESX</option>
+						<option value="8">VIS6000</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='white'>*</font> <label
+					id="initiatorLabel"></label></td>
+				<td align="left"><select id="initiatorType"
+					name="initiatorType" style="width: 60px;"
+					onchange="updateInitiator()">
+						<option value="iscsi">ISCSI</option>
+						<option value="fc">FC</option>
+				</select> <select id="initiator" name="initiator" style="width: 80px;"
+					onmouseover="FixWidth(this)">
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td align="left"><input class="btn"
+					onmouseover="this.className='btn_mouseover'"
+					onmouseout="this.className='btn'" type="button" id="createHostBtn"
+					onclick="createHost();"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td align="left"><label algin="left" id="Host_status"
+					name="Host_status"> </label></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</body>

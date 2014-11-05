@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f7f5f">//&nbsp;传入请求参数</font><br />
+<font color="#000000">String&nbsp;hostgroup&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;hostgroup&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">String&nbsp;lungroup&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;lungroup&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">String&nbsp;portgroup&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;portgroup&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#7f0055"><b>try</b></font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">MappingViewHandler&nbsp;handler&nbsp;=&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">(</font><font color="#000000">MappingViewHandler</font><font color="#000000">)&nbsp;</font><font color="#000000">manager.getHandler</font><font color="#000000">(</font><font color="#000000">HandlerConstant.MAPPINGVIEW_HANDLER</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">portgroup</font><font color="#000000">))</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;创建不包含端口组的映射视图</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">handler.createMap</font><font color="#000000">(</font><font color="#000000">lungroup,&nbsp;hostgroup</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;创建包含端口组的映射视图</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">handler.createMap</font><font color="#000000">(</font><font color="#000000">lungroup,&nbsp;portgroup,&nbsp;hostgroup</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#000000">}</font><br />
+<font color="#7f0055"><b>catch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">ApiException&nbsp;e</font><font color="#000000">)</font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;new&nbsp;</b></font><font color="#000000">Gson</font><font color="#000000">()</font><font color="#000000">.toJson</font><font color="#000000">(</font><font color="#000000">e.getMessage</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#000000">}</font><br />
+<font color="#7f0055"><b>return&nbsp;new&nbsp;</b></font><font color="#000000">Gson</font><font color="#000000">()</font><font color="#000000">.toJson</font><font color="#000000">(</font><font color="#2a00ff">&#34;success&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>

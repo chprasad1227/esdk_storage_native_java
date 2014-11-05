@@ -1,0 +1,76 @@
+<body>
+	<table width="100%" heigh="100%" border="0">
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceIdLabel"></label></td>
+			<td class="td"><a id="deviceId"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceNameLabel"></label></td>
+			<td class="td"><a id="deviceName"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceLocationLabel"></label></td>
+			<td class="td"><a id="deviceLocation"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceHealthLabel"></label></td>
+			<td class="td"><a id="deviceHealth"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceRunningLabel"></label></td>
+			<td class="td"><a id="deviceRunning"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label
+				id="deviceDescriptionLabel"></label></td>
+			<td class="td"><a id="deviceDescription"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceModeLabel"></label></td>
+			<td class="td"><a id="deviceMode"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceVersionLabel"></label></td>
+			<td class="td"><a id="deviceVersion"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="devicewwnLabel"></label></td>
+			<td class="td"><a id="devicewwn"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceStatusLabel"></label></td>
+			<td class="td"><a id="deviceStatus"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><label id="deviceTimeLabel"></label></td>
+			<td class="td"><a id="deviceTime"></a></td>
+		</tr>
+	</table>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#interfaceName").html("获取系统信息");
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/pages/sourcecode/systemInfo_sourceCode.html",
+			async : false,
+			success : function(data) {
+				$("#sourceCodeContext").html(data);
+			}
+		});
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&method=getSystemInfo",
+			async : false,
+			success : function(data) {
+				$.each(data, function(key, value) {
+					$("#" + key).html(value);
+				});
+			}
+		});
+	});
+</script>

@@ -1,0 +1,204 @@
+<head>
+<link rel="stylesheet" href="/eSDK_OpenAPI_Demo_BS_JAVA/css/tree.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="/eSDK_OpenAPI_Demo_BS_JAVA/css/zTreeStyle.css" type="text/css">
+<link rel="stylesheet" href="/eSDK_OpenAPI_Demo_BS_JAVA/css/demo.css"
+	type="text/css" />
+<link href="/eSDK_OpenAPI_Demo_BS_JAVA/css/thickbox.css" media="screen"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+	src="/eSDK_OpenAPI_Demo_BS_JAVA/js/jquery-1.8.3.js"></script>
+<script type="text/javascript"
+	src="/eSDK_OpenAPI_Demo_BS_JAVA/js/jquery.ztree.core-3.5.js"></script>
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/en-us.js"
+	type="text/javascript"></script>
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/zh-cn.js"
+	type="text/javascript"></script>
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/demotools.js"
+	type="text/javascript"></script>
+
+<script type="text/javascript">
+	function createstoragepool() {
+		var id = $("#storagepoolId").val();
+		var storagepoolName = $("#storagepoolName").val();
+		var parentId = $("#parentId").val();
+		var userConsumedCapacityThreshold = $("#userConsumedCapacityThreshold")
+				.val();
+		var tier = $("#tier").val();
+		var capacity = $("#capacity").val();
+		// 简单参数校验
+		if (isEmpty(storagepoolName)) {
+			$("#storagepoolNameErrTip").html(
+					controller.language.titles["nameErrTip"]);
+			return false;
+		} else {
+			$("#storagepoolNameErrTip").html("");
+		}
+		if (isEmpty(parentId)) {
+			$("#diskpoolIdErrTip").html(
+					controller.language.titles["diskpoolIdErrTip"]);
+			return false;
+		} else {
+			$("#diskpoolIdErrTip").html("");
+		}
+		if (isEmpty(userConsumedCapacityThreshold)) {
+			$("#userConsumedCapacityThresholdErrTip")
+					.html(
+							controller.language.titles["userConsumedCapacityThresholdErrTip"]);
+			return false;
+		} else {
+			$("#userConsumedCapacityThresholdErrTip").html("");
+		}
+		if (userConsumedCapacityThreshold<50||userConsumedCapacityThreshold>85) {
+			$("#userConsumedCapacityThresholdErrTip").html("取值范围在50~85");
+			return false;
+		} else {
+			$("#userConsumedCapacityThresholdErrTip").html("");
+		}
+		if (!isNumber(userConsumedCapacityThreshold)) {
+			$("#userConsumedCapacityThresholdErrTip")
+					.html(
+							controller.language.titles["userConsumedCapacityThresholdErrTipIsNumber"]);
+			return false;
+		} else {
+			$("#userConsumedCapacityThresholdErrTip").html("");
+		}
+		if (isEmpty(capacity)) {
+			$("#diskpoolcapacityErrTip").html(
+					controller.language.titles["capacityErrTip"]);
+			return false;
+		} else {
+			$("#diskpoolcapacityErrTip").html("");
+		}
+		if (!isNumber(capacity)) {
+			$("#diskpoolcapacityErrTip").html(
+					controller.language.titles["capacityIsNumber"]);
+			return false;
+		} else {
+			$("#diskpoolcapacityErrTip").html("");
+		}
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&storagepoolName=" + storagepoolName + "&parentId="
+					+ parentId + "&userConsumedCapacityThreshold="
+					+ userConsumedCapacityThreshold + "&tier=" + tier
+					+ "&capacity=" + capacity + "&id=" + id
+					+ "&method=createStoragePool",
+			async : false,
+			success : function(data) {
+				if ("success" == data) {
+					self.parent.tb_remove();
+				} else {
+					$("#storagepool_status").html(data);
+				}
+			},
+			error : function(data) {
+				$("#storagepool_status").html(
+						controller.language.titles["operationFailed"]);
+			},
+			beforeSend : function() {
+				$("#storagepool_status").html("");
+			}
+		});
+	}
+	function load() {
+		changeLang();
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&method=getBatchDiskPool",
+			async : false,
+			success : function(data) {
+				$.each(data, function(key, value) {
+					var Option = document.createElement("OPTION");
+					Option.value = key;
+					Option.text = value;
+					document.getElementById("parentId").options.add(Option);
+				});
+			}
+		});
+	}
+</script>
+</head>
+
+
+<body onload="load()">
+	<div class="inoutput_param_div1">
+		<table width="100%">
+			<tr>
+				<td width="10%"></td>
+				<td></td>
+				<td width="40%"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left" width="25%"><font color='red'>*</font> <label
+					id="nameLabel">名称:</label></td>
+				<td align="left"><input type="text" id="storagepoolName"
+					name="storagepoolName"></td>
+				<td align="left"><span class="span_tip"
+					id="storagepoolNameErrTip"> </span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='white'>*</font> <label
+					id="idLabel">ID:</label></td>
+				<td align="left"><input type="text" id="storagepoolId"
+					name="storagepoolId"></td>
+				<td align="left"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left""><font color='red'>*</font> <label
+					id="diskpoolIdLabel">硬盘域:</label></td>
+				<td align="left"><select id="parentId" name="parentId"
+					onmouseover="FixWidth(this)"></select></td>
+				<td align="left"><span class="span_tip" id="diskpoolIdErrTip">
+				</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='red'>*</font> <label
+					id="userConsumedCapacityThresholdLabel">已用容量阈值:</label></td>
+				<td align="left"><input type="text"
+					id="userConsumedCapacityThreshold"
+					name="userConsumedCapacityThreshold"></td>
+				<td align="left"><span class="span_tip"
+					id="userConsumedCapacityThresholdErrTip"> </span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="left"><font color='red'>*</font> <label
+					id="diskLabel">硬盘类型:</label></td>
+				<td align="left"><select id="tier" name="tier">
+						<option value="tier0">tier0</option>
+						<option value="tier1">tier1</option>
+						<option value="tier2">tier2</option>
+				</select> <input type="text" id="capacity" style="width:90px" /> <span>G</span></td>
+				<td align="left"><span class="span_tip"
+					id="diskpoolcapacityErrTip"> </span></td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td align="left"><input class="btn"
+					onmouseover="this.className='btn_mouseover'"
+					onmouseout="this.className='btn'" type="button"
+					id="createstoragepoolBtn" onclick="createstoragepool();"
+					value="创建存储池"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td align="left"><label algin="left" id="storagepool_status"
+					name="storagepool_status"> </label></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+

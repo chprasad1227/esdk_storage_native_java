@@ -1,0 +1,160 @@
+<body>
+	<table width="100%" heigh="100%" border="0">
+		<tr valign="center">
+			<td class="td_label" width="20%"><a>发生时间</a></td>
+			<td class="td_label"><a>描 述</a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><a id="name1"></a></td>
+			<td class="td"><a class="zxx_text_overflow" id="description1"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><a id="name2"></a></td>
+			<td class="td"><a class="zxx_text_overflow" id="description2"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><a id="name3"></a></td>
+			<td class="td"><a class="zxx_text_overflow" id="description3"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><a id="name4"></a></td>
+			<td class="td"><a class="zxx_text_overflow" id="description4"></a></td>
+		</tr>
+		<tr valign="center">
+			<td class="menu_td" width="20%"><a id="name5"></a></td>
+			<td class="td"><a class="zxx_text_overflow" id="description5"></a></td>
+		</tr>
+		<!-- 		<tr valign="center"> -->
+		<!-- 			<td class="menu_td" width="20%"><a id="name6"></a></td> -->
+		<!-- 			<td class="td"><a class="zxx_text_overflow" id="description6"></a></td> -->
+		<!-- 		</tr> -->
+		<!-- 		<tr valign="center"> -->
+		<!-- 			<td class="menu_td" width="20%"><a id="name7"></a></td> -->
+		<!-- 			<td class="td"><a class="zxx_text_overflow" id="description7"></a></td> -->
+		<!-- 		</tr> -->
+		<!-- 		<tr valign="center"> -->
+		<!-- 			<td class="menu_td" width="20%"><a id="name8"></a></td> -->
+		<!-- 			<td class="td"><a class="zxx_text_overflow" id="description8"></a></td> -->
+		<!-- 		</tr> -->
+		<!-- 		<tr valign="center"> -->
+		<!-- 			<td class="menu_td" width="20%"><a id="name9"></a></td> -->
+		<!-- 			<td class="td"><a class="zxx_text_overflow" id="description9"></a></td> -->
+		<!-- 		</tr> -->
+		<!-- 		<tr valign="center"> -->
+		<!-- 			<td class="menu_td" width="20%"><a id="name10"></a></td> -->
+		<!-- 			<td class="td"><a class="zxx_text_overflow" id="description10"></a></td> -->
+		<!-- 		</tr> -->
+		<tr valign="center">
+			<td></td>
+			<td><label id="lastLabel" onclick="lastAlarm();"></label>
+				&nbsp;&nbsp;&nbsp;&nbsp; <label id="nextLabel"
+				onclick="nextAlarm();"></label></td>
+		</tr>
+	</table>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#interfaceName").html("查询当前告警");
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/pages/sourcecode/activeAlarm_sourceCode.html",
+			async : false,
+			success : function(data) {
+				$("#sourceCodeContext").html(data);
+			}
+		});
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&method=getAlarmInfo",
+			async : false,
+			success : function(data) {
+				var i = 1;
+				$.each(data, function(key, value) {
+					putValue(i, value);
+					i++;
+				});
+			}
+		});
+		wordLimit();
+	});
+	function nextAlarm() {
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&method=getNextAlarmInfo",
+			async : false,
+			success : function(data) {
+				if (null != data) {
+					clear();
+					var i = 1;
+					$.each(data, function(key, value) {
+						putValue(i, value);
+						i++;
+					});
+				}
+			}
+		});
+		wordLimit();
+	}
+	function lastAlarm() {
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&method=getLastAlarmInfo",
+			async : false,
+			success : function(data) {
+				if (null != data) {
+					clear();
+					var i = 1;
+					$.each(data, function(key, value) {
+						putValue(i, value);
+						i++;
+					});
+				}
+			}
+		});
+		wordLimit();
+	}
+	function clear() {
+		for ( var i = 1; i <= 5; i++) {
+			$("#name" + i).html("");
+			$("#description" + i).html("");
+		}
+	}
+
+	function putValue(i, value) {
+		var index = value.indexOf('=');
+		$("#name" + i).html(value.substring(0, index));
+		$("#description" + i).html(value.substring(index + 1));
+		$("#description" + i).attr("title", value.substring(index + 1));
+	}
+
+	function wordLimit() {
+		$(".zxx_text_overflow").each(
+				function() {
+					var copyThis = $(this.cloneNode(true)).hide().css({
+						'position' : 'absolute',
+						'width' : 'auto',
+						'overflow' : 'visible'
+					});
+					$(this).after(copyThis);
+					if (copyThis.width() > $(this).width()) {
+						$(this).text(
+								$(this).text().substring(0,
+										$(this).html().length - 4));
+						$(this).html($(this).html() + '...');
+						copyThis.remove();
+						wordLimit();
+					} else {
+						copyThis.remove(); //清除复制
+						return;
+					}
+				});
+	}
+</script>

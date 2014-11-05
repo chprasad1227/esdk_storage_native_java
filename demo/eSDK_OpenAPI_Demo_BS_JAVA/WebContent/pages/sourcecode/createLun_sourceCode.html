@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f7f5f">//&nbsp;传入请求参数</font><br />
+<font color="#000000">String&nbsp;id&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;id&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">String&nbsp;name&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;name&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">String&nbsp;description&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;description&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">String&nbsp;parentId&nbsp;=&nbsp;request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;parentId&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#7f0055"><b>long&nbsp;</b></font><font color="#000000">capacity&nbsp;=&nbsp;Long.parseLong</font><font color="#000000">(</font><font color="#000000">request.getParameter</font><font color="#000000">(</font><font color="#2a00ff">&#34;capacity&#34;</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#3f7f5f">//&nbsp;创建LUN对象</font><br />
+<font color="#000000">LunMO&nbsp;lunMO&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">LunMO</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#3f7f5f">//&nbsp;填写LUN的名称、描述、存储池ID、容量</font><br />
+<font color="#000000">lunMO.setName</font><font color="#000000">(</font><font color="#000000">name</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">description</font><font color="#000000">))</font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">lunMO.setDescription</font><font color="#000000">(</font><font color="#000000">description</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">}</font><br />
+<font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">.equals</font><font color="#000000">(</font><font color="#000000">id</font><font color="#000000">))</font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">lunMO.setParentId</font><font color="#000000">(</font><font color="#2a00ff">&#34;0&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">}</font><br />
+<font color="#000000">lunMO.setParentId</font><font color="#000000">(</font><font color="#000000">parentId</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">lunMO.setCapacity</font><font color="#000000">((</font><font color="#7f0055"><b>long</b></font><font color="#000000">)&nbsp;</font><font color="#990000">1024&nbsp;</font><font color="#000000">*&nbsp;</font><font color="#990000">1024&nbsp;</font><font color="#000000">*&nbsp;</font><font color="#990000">1024&nbsp;</font><font color="#000000">*&nbsp;capacity</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#3f7f5f">//&nbsp;获取LUN的接口实现类</font><br />
+<font color="#000000">LunHandler&nbsp;lunHandler;</font><br />
+<font color="#7f0055"><b>try</b></font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">lunHandler&nbsp;=&nbsp;</font><font color="#000000">(</font><font color="#000000">LunHandler</font><font color="#000000">)&nbsp;</font><font color="#000000">manager.getHandler</font><font color="#000000">(</font><font color="#000000">HandlerConstant.LUN_HANDLER</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;调用LUN的create方法，在ID为0的存储池中创建一个名称为LUN000，描述信息为LUN_000,容量为2G的LUN</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">lunHandler.create</font><font color="#000000">(</font><font color="#000000">lunMO</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#000000">}</font><br />
+<font color="#7f0055"><b>catch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">ApiException&nbsp;e</font><font color="#000000">)</font><br />
+<font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;new&nbsp;</b></font><font color="#000000">Gson</font><font color="#000000">()</font><font color="#000000">.toJson</font><font color="#000000">(</font><font color="#000000">e.getMessage</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>return&nbsp;new&nbsp;</b></font><font color="#000000">Gson</font><font color="#000000">()</font><font color="#000000">.toJson</font><font color="#000000">(</font><font color="#2a00ff">&#34;success&#34;</font><font color="#000000">)</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>
