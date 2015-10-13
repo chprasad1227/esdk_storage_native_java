@@ -1,0 +1,257 @@
+<head>
+<link href='/eSDK_OpenAPI_Demo_BS_JAVA/css/jquery.carousel.css'
+	rel='stylesheet' type='text/css'>
+<script src='/eSDK_OpenAPI_Demo_BS_JAVA/js/jquery.carousel.js'
+	type='text/javascript'></script>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<script src="/eSDK_OpenAPI_Demo_BS_JAVA/js/thickbox.js"
+	type="text/javascript"></script>
+<link href="/eSDK_OpenAPI_Demo_BS_JAVA/css/thickbox.css" media="screen"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	function getcount(type) {
+		var id = "#" + type;
+		$.ajax({
+			url : "/eSDK_OpenAPI_Demo_BS_JAVA/openapiServlet",
+			type : "post",
+			dataType : "json",
+			data : "&type=" + type + "&method=getCount",
+			async : false,
+			success : function(data) {
+				if ("faild" != data) {
+					$(id).html(data);
+				}
+			},
+			beforeSend : function() {
+				$(id).html("");
+			}
+		});
+	}
+</script>
+</head>
+
+<body>
+	<!-- 	<div class='content'> -->
+	<!-- 		<section style="padding-left: 2%;"> -->
+	<!-- 			<div class='carousel'> -->
+	<!-- 				<div class='previews'> -->
+	<!-- 					<div class='preview'> -->
+	<!-- 						<div class="section"> -->
+	<!-- 							<table width="100%"> -->
+	<!-- 								<tr> -->
+	<!-- 									<td width="10%"></td> -->
+	<!-- 									<td></td> -->
+	<!-- 									<td width="32%"></td> -->
+	<!-- 								</tr> -->
+	<!-- 							</table> -->
+	<div id="create">
+		<div style="width: 700px; margin-top: 35px; margin-left: 35px;">
+			<table width="100%" height="auto">
+				<tbody>
+					<tr>
+						<td width="72px" valign="top"><a
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/creatediskpoolinfo_execution.html?keepThis=true&TB_iframe=true&height=150&width=400"
+							class="thickbox" rel="noreferrer" onmousemove="sourceCode(this);"
+							id="createDiskPool_sourceCode"> <!--创建硬盘域-->
+								<div class="quicklink_item" id="diskpoolLink">
+									<div style="text-align: center;">
+										<img
+											src="/eSDK_OpenAPI_Demo_BS_JAVA/image/diskdomain_link.png">
+									</div>
+									<div id="createDiskPool_div"
+										class="quicklink_item_des ng-binding"></div>
+									<div class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="diskPoolCount">
+											<script type="text/javascript">
+												getcount("diskPoolCount");
+											</script>
+										</div>
+									</div>
+								</div></a></td>
+						<td width="83px" valign="top">
+							<div style="margin-top: 10px;" class="reslink_single_arrow">
+							</div>
+						</td>
+						<td width="72px" valign="top"><a
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/createstoragepoolinfo_execution.html?keepThis=true&TB_iframe=true&height=250&width=520"
+							class="thickbox" onmousemove="sourceCode(this);"
+							id="createStoragePool_sourceCode"> <!--创建存储池-->
+								<div class="quicklink_item" id="storageLink">
+									<div style="text-align: center;">
+										<img
+											src="/eSDK_OpenAPI_Demo_BS_JAVA/image/storagepool_link.png">
+									</div>
+									<div id="createStoragePool_div"
+										class="quicklink_item_des ng-binding"></div>
+									<div class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="storagePoolCount">
+											<script type="text/javascript">
+												getcount("storagePoolCount");
+											</script>
+										</div>
+									</div>
+								</div>
+						</a></td>
+						<td width="83px" valign="top">
+							<div style="margin-top: 10px;" class="reslink_single_arrow">
+							</div>
+						</td>
+						<td width="72px" valign="top">
+						<td width="72px" valign="top"><a
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/createLUN_execution.html?keepThis=true&TB_iframe=true&height=250&width=520"
+							class="thickbox" onmousemove="sourceCode(this);"
+							id="createLun_sourceCode"> <!--创建LUN-->
+								<div class="quicklink_item" id="lunLink">
+									<div style="text-align: center;">
+										<img src="/eSDK_OpenAPI_Demo_BS_JAVA/image/lun_link.png">
+									</div>
+									<div id="createLun_div" class="quicklink_item_des ng-binding"></div>
+									<div class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="lunCount">
+											<script type="text/javascript">
+												getcount("lunCount");
+											</script>
+										</div>
+									</div>
+								</div>
+						</a> <a
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/createHost_execution.html?keepThis=true&TB_iframe=true&height=300&width=700"
+							class="thickbox" onmousemove="sourceCode(this);"
+							id="createHost_sourceCode"> <!--创建主机-->
+								<div class="quicklink_item" id="hostLink">
+									<div style="text-align: center;">
+										<img src="/eSDK_OpenAPI_Demo_BS_JAVA/image/host_link.png">
+									</div>
+									<div id="createHost_div" class="quicklink_item_des ng-binding"></div>
+									<div class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="hostCount">
+											<script type="text/javascript">
+												getcount("hostCount");
+											</script>
+										</div>
+									</div>
+								</div>
+						</a></td>
+
+
+
+
+						<td width="83px" valign="top">
+							<div style="margin-top: 10px;" class="reslink_single_arrow">
+							</div>
+							<div style="margin-top: 55px;" class="reslink_single_arrow">
+							</div>
+						</td>
+						<td width="72px" valign="top"><a title="创建LUN组"
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/createLUNGroup_execution.html?keepThis=true&TB_iframe=true&height=250&width=520"
+							class="thickbox" onmousemove="sourceCode(this);"
+							id="createLunGroup_sourceCode"> <!--创建LUN组-->
+								<div class="quicklink_item" id="lungroupLink">
+									<div style="text-align: center;">
+										<img src="/eSDK_OpenAPI_Demo_BS_JAVA/image/lunteam_link.png">
+									</div>
+									<div class="quicklink_item_des ng-binding"
+										id="createLunGroup_div"></div>
+									<div class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="lunGroupCount">
+											<script type="text/javascript">
+												getcount("lunGroupCount");
+											</script>
+										</div>
+									</div>
+								</div></a> <a
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/createHostGroup_execution.html?keepThis=true&TB_iframe=true&height=250&width=520"
+							class="thickbox" onmousemove="sourceCode(this);"
+							id="createHostGroup_sourceCode"> <!--创建主机组-->
+								<div class="quicklink_item" id="hostgroupLink">
+									<div style="text-align: center;">
+										<img src="/eSDK_OpenAPI_Demo_BS_JAVA/image/hostteam_link.png">
+									</div>
+									<div class="quicklink_item_des ng-binding"
+										id="createHostGroup_div"></div>
+									<div class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="hostGroupCount">
+											<script type="text/javascript">
+												getcount("hostGroupCount");
+											</script>
+										</div>
+									</div>
+								</div></a> <a
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/createPortGroup_execution.html?keepThis=true&TB_iframe=true&height=200&width=520"
+							class="thickbox" onmousemove="sourceCode(this);"
+							id="createPortGroup_sourceCode"> <!--创建端口组-->
+								<div class="quicklink_item" id="portgroupLink">
+									<div style="text-align: center;">
+										<img src="/eSDK_OpenAPI_Demo_BS_JAVA/image/portgroup_link.png">
+									</div>
+									<div class="quicklink_item_des ng-binding"
+										id="createPortGroup_div"></div>
+									<div class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="portGroupCount">
+											<script type="text/javascript">
+												getcount("portGroupCount");
+											</script>
+										</div>
+									</div>
+								</div></a></td>
+						<td width="101px" valign="top">
+							<div style="margin-top: 0px;" class="reslink_complex_arrow_top"></div>
+							<div class="reslink_complex_arrow_frame"></div>
+							<div class="reslink_complex_arrow_center"></div>
+							<div class="reslink_complex_arrow_frame"></div>
+							<div class="reslink_complex_arrow_bottom"></div>
+						</td>
+						<td width="120px;" valign="center"><a
+							href="/eSDK_OpenAPI_Demo_BS_JAVA/pages/execution/createMappingView_execution.html?keepThis=true&TB_iframe=true&height=200&width=520"
+							class="thickbox" onmousemove="sourceCode(this);"
+							id="createMappingView_sourceCode"> <!--创建映射视图-->
+								<div class="quicklink_item" height="30px" id="mapLink">
+									<div style="text-align: center;">
+										<img
+											src="/eSDK_OpenAPI_Demo_BS_JAVA/image/feature_mappingview_normal.png">
+									</div>
+									<div class="quicklink_item_des ng-binding"
+										id="createMappingView_div"></div>
+									<div style="top: 30px;" class="quicklink_item_tip_normal">
+										<div style="margin-top: 2px;" id="mappingViewCount">
+											<script type="text/javascript">
+												getcount("mappingViewCount");
+											</script>
+										</div>
+									</div>
+								</div>
+						</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+	<!-- 					<div class='preview'> -->
+	<!-- 						<img src='/eSDK_OpenAPI_Demo_BS_JAVA//image/step1.jpg'> -->
+	<!-- 					</div> -->
+	<!-- 					<div class='preview'> -->
+	<!-- 						<img src='/eSDK_OpenAPI_Demo_BS_JAVA//image/step2.jpg'> -->
+	<!-- 					</div> -->
+	<!-- 					<div class='preview'> -->
+	<!-- 						<img src='/eSDK_OpenAPI_Demo_BS_JAVA//image/step3.jpg'> -->
+	<!-- 					</div> -->
+	<!-- 					<div class='preview'> -->
+	<!-- 						<img src='/eSDK_OpenAPI_Demo_BS_JAVA//image/step4.jpg'> -->
+	<!-- 					</div> -->
+	<!-- 					<div class='preview'> -->
+	<!-- 						<img src='/eSDK_OpenAPI_Demo_BS_JAVA//image/step5.jpg'> -->
+	<!-- 					</div> -->
+	<!-- 					<div class='preview'> -->
+	<!-- 						<img src='/eSDK_OpenAPI_Demo_BS_JAVA//image/step6.jpg'> -->
+	<!-- 					</div> -->
+	<!-- 				</div> -->
+	<!-- 				<div class='controls'> -->
+	<!-- 					<a class='next' data-action='next' href='#'>›</a> <a class='prev' -->
+	<!-- 						data-action='prev' href='#'>‹</a> -->
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	<!-- 		</section> -->
+	<!-- 	</div> -->
+</body>
